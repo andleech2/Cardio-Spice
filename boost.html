@@ -652,13 +652,12 @@
     margin: 0 auto;
   }
   .gallery-main {
-    width: 100%;
+    flex: 1;
     aspect-ratio: 3 / 5;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid rgba(180,40,40,0.3);
     box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-    margin-bottom: 16px;
     background: #ffffff;
     display: flex;
     align-items: center;
@@ -1480,7 +1479,7 @@
   </div>
   <nav>
     <div class="nav-section-header open" onclick="toggle(this)">
-      🌶 Products <span class="arrow">▶</span>
+      <span style="color:#c8b89a;">🌶 Products</span> <span class="arrow">▶</span>
     </div>
     <div class="nav-sub open">
       <a href="https://www.cardiospice.com/pulse.html" class="sub-label heart" style="display:block;text-decoration:none;color:#ffffff;">Cardio Blend</a>
