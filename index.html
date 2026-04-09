@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="description" content="Cardio Spice — Organic spice blends crafted for heart health, focus, energy, and strength. Salt free and contains only USDA certified organic spices">
+<meta name="description" content="Cardio Spice — Organic spice blends crafted for heart health, focus, energy, and strength. Salt free. All organic herbs and spices.">
 <meta name="keywords" content="Cardio Spice, organic spice blends, heart health, energy, focus, strength, all organic ingredients, organic seasoning, salt free spice, cardiovascular spice">
 <meta property="og:title" content="Cardio Spice — Organic Spice Blends for Heart, Focus, Energy, Strength">
 <meta property="og:description" content="Discover Cardio Spice: organic blends designed to boost heart health, focus, energy, and strength. Perfect for any meal.">
@@ -253,13 +253,13 @@
 
   /* ── LANDING ── */
   .landing {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: center;
-    padding: 60px 30px 60px;
+    padding: 100px 30px 80px;
     background:
       radial-gradient(ellipse at 50% 40%, #3a0a00 0%, #180400 45%, #0d0d0d 80%);
     position: relative;
@@ -747,7 +747,7 @@
 
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-<div class="site-header"><div class="site-header-title">CARDIO SPICE<sup style="font-size:0.45em;vertical-align:super;letter-spacing:0;margin-left:-6px;">™</sup></div></div>
+<div class="site-header"><div class="site-header-title">CARDIO SPICE<sup style="font-size:0.45em;vertical-align:super;letter-spacing:0;margin-left:-6px;">™</sup></div><div style="font-family:'Rajdhani',sans-serif;font-size:clamp(10px,3vw,14px);letter-spacing:6px;color:#c8b89a;opacity:0.7;text-transform:uppercase;margin-top:2px;">SEASONINGS</div></div>
 <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Menu">
   <span></span><span></span><span></span>
 </button>
@@ -784,18 +784,6 @@
 </div>
 
 <main class="landing active" id="page-home">
-
-  <!-- WORDMARK LOGO -->
-      <div class="wordmark-divider">
-      <div class="wordmark-divider-line"></div>
-      <svg class="wordmark-ecg" viewBox="0 0 80 16" width="80" height="16" xmlns="http://www.w3.org/2000/svg">
-        <polyline
-          points="0,8 14,8 20,8 24,2 28,14 32,1 36,14 40,8 46,8 80,8"
-          stroke="#e74c3c" stroke-width="1.5" fill="none"
-          stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-      </svg>
-      <div class="wordmark-divider-line"></div>
-    </div>
   </div>
 
     <div class="logo-wrap">
@@ -817,10 +805,6 @@
     <button class="cta-btn cta-btn-primary" onclick="toggleMenu()">☰<br><span>Products</span></button>
     <a href="https://www.cardiospice.com/purchase.html" class="cta-btn cta-btn-secondary">🛒<br><span>Buy</span></a>
   </div>
-  <svg class="ecg-bar" viewBox="0 0 600 24" xmlns="http://www.w3.org/2000/svg">
-    <polyline points="0,12 80,12 100,12 110,3 122,21 132,3 142,21 152,12 172,12 600,12"
-      stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
 </main>
 
 <!-- WHERE TO BUY PAGE -->
@@ -853,7 +837,7 @@
 <footer>
   <div class="footer-lab"></div>
   <p class="footer-legal">
-    All Cardio Spice™ products are contains only USDA certified organic spices. These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. For culinary use only. Cardio Spice™ is a trademark of . © 2025 All rights reserved. Product formulations subject to change without notice. Keep out of reach of children.
+    All Cardio Spice™ products contain only organic herbs and spices. These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. For culinary use only. Cardio Spice™ is a trademark of . © 2025 All rights reserved. Product formulations subject to change without notice. Keep out of reach of children.
   </p>
   <div class="footer-copy">© 2025 Cardio Spice™ · Made in the USA</div>
 </footer>
