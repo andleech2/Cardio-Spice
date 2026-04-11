@@ -638,16 +638,24 @@
   }
   .cta-btn {
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 14px 32px;
+    padding: 14px 0;
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.25s ease;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
   }
   .cta-btn-primary {
     background: linear-gradient(135deg, #c0392b, #8b1a1a);
@@ -1515,18 +1523,18 @@
   <div class="gallery-inner">
 
     <div class="gallery-main">
-      <img id="mainImg" src="https://andleech2.github.io/cardio-spice/images/front-pulse-label.png" alt="Cardio Blend Pulse" />
+      <img id="mainImg" src="https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg" alt="Cardio Blend Pulse" />
     </div>
 
     <div class="gallery-thumbs">
       <div class="gallery-thumb active" onclick="setMain(this, 0)">
-        <img src="https://andleech2.github.io/cardio-spice/images/front-pulse-label.png" alt="Label" />
+        <img src="https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg" alt="Label" />
       </div>
       <div class="gallery-thumb" onclick="setMain(this, 1)">
-        <img src="https://andleech2.github.io/cardio-spice/images/back-pulse-label.png" alt="Nutrition Facts" />
+        <img src="https://andleech2.github.io/cardio-spice/images/front-pulse-label.png" alt="Nutrition Facts" />
       </div>
       <div class="gallery-thumb" onclick="setMain(this, 2)">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Coming Soon" style="background:#fff;" />
+        <img src="https://andleech2.github.io/cardio-spice/images/back-pulse-label.png" alt="Coming Soon" style="background:#fff;" />
       </div>
     </div>
 
@@ -1537,14 +1545,15 @@
   <div class="flavor-label">About This Blend</div>
   <div class="flavor-box">
     <p><strong>Heart-Friendly Purpose:</strong><br>
-    Every ingredient was chosen to support cardiovascular wellness, helping maintain healthy circulation and blood pressure — all while tasting delicious.</p>
-    <p>Cardio Blend - Pulse is a heart-conscious, everyday seasoning designed to bring warmth, depth, and gentle complexity to your meals. Crafted with a thoughtful balance of spices, it offers a savory, lightly earthy, and subtly sweet flavor that enhances all types of foods.</p>
+    Every ingredient was chosen to support cardiovascular wellness, helping maintain healthy circulation and blood pressure.</p>
+    <p>Cardio Blend - Pulse is a heart-conscious seasoning with a uniquely complex flavor profile. A thoughtful balance of organic herbs and spices brings warmth, depth, and subtle complexity to any dish. It's designed to be healthy and delicious.</p>
   </div>
 </div>
 
 <div class="cta-wrap">
-  <button class="cta-btn cta-btn-primary" onclick="toggleMenu()">☰ &nbsp;Products</button>
-  <a href="https://www.cardiospice.com/purchase.html" class="cta-btn cta-btn-secondary">🛒 &nbsp;Where to Buy</a>
+  <a href="https://www.cardiospice.com/about.html" class="cta-btn cta-btn-secondary">🌿<br><span>About</span></a>
+  <button class="cta-btn cta-btn-primary" onclick="toggleMenu()">☰<br><span>Products</span></button>
+  <a href="https://www.cardiospice.com/purchase.html" class="cta-btn cta-btn-secondary">🛒<br><span>Buy</span></a>
 </div>
 
 <script>
@@ -1553,7 +1562,7 @@
   function toggle(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open');}
   window.addEventListener('load', function(){ var t = document.querySelector('.gallery-thumb'); if(t) setMain(t, 0); });
 
-  const srcs = ["https://andleech2.github.io/cardio-spice/images/front-pulse-label.png", "https://andleech2.github.io/cardio-spice/images/back-pulse-label.png", null];
+  const srcs = ["https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg", "https://andleech2.github.io/cardio-spice/images/front-pulse-label.png", "https://andleech2.github.io/cardio-spice/images/back-pulse-label.png"];
   function setMain(thumb, idx) {
     document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
     thumb.classList.add('active');

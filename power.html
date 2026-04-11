@@ -606,16 +606,24 @@
   }
   .cta-btn {
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 14px 32px;
+    padding: 14px 0;
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.25s ease;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
   }
   .cta-btn-primary {
     background: linear-gradient(135deg, #c0392b, #8b1a1a);
@@ -1347,16 +1355,24 @@
   }
   .cta-btn {
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 14px 32px;
+    padding: 14px 0;
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.25s ease;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
   }
   .cta-btn-primary {
     background: linear-gradient(135deg, #c0392b, #8b1a1a);
@@ -1536,8 +1552,9 @@
 </div>
 
 <div class="cta-wrap">
-  <button class="cta-btn cta-btn-primary" onclick="toggleMenu()">☰ &nbsp;Products</button>
-  <a href="https://www.cardiospice.com/purchase.html" class="cta-btn cta-btn-secondary">🛒 &nbsp;Where to Buy</a>
+  <a href="https://www.cardiospice.com/about.html" class="cta-btn cta-btn-secondary">🌿<br><span>About</span></a>
+  <button class="cta-btn cta-btn-primary" onclick="toggleMenu()">☰<br><span>Products</span></button>
+  <a href="https://www.cardiospice.com/purchase.html" class="cta-btn cta-btn-secondary">🛒<br><span>Buy</span></a>
 </div>
 
 <script>
