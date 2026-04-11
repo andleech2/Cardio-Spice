@@ -41,9 +41,9 @@
   /* ── HAMBURGER BUTTON ── */
   .menu-btn {
     position: fixed;
-    top: 24px; left: 24px;
+    top: 18px; left: 12px;
     z-index: 300;
-    width: 64px; height: 64px;
+    width: 48px; height: 48px;
     background: linear-gradient(145deg, #1e0a0a, #2d0e0e);
     border: 1px solid rgba(220,60,30,0.5);
     border-radius: 12px;
@@ -661,12 +661,12 @@
   }
   .gallery-main {
     flex: 1;
-    aspect-ratio: 3 / 5;
+    aspect-ratio: 1 / 2;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid rgba(180,40,40,0.3);
     box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-    background: #ffffff;
+    background: #1a1a1a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -689,11 +689,11 @@
   .gallery-thumb {
     width: 100%;
     flex: 1;
-    border-radius: 6px;
+        border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
-    border: 2px solid rgba(255,255,255,0.08);
-    background: #ffffff;
+    border: none;
+    background: #1a1a1a;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
   .gallery-thumb img {
@@ -704,7 +704,6 @@
     pointer-events: none;
   }
   .gallery-thumb.active {
-    border-color: #e74c3c;
     box-shadow: 0 0 14px rgba(231,76,60,0.5);
   }
   .gallery-thumb:hover:not(.active) {
@@ -758,9 +757,9 @@
   /* ── HAMBURGER BUTTON ── */
   .menu-btn {
     position: fixed;
-    top: 24px; left: 24px;
+    top: 18px; left: 12px;
     z-index: 300;
-    width: 64px; height: 64px;
+    width: 48px; height: 48px;
     background: linear-gradient(145deg, #1e0a0a, #2d0e0e);
     border: 1px solid rgba(220,60,30,0.5);
     border-radius: 12px;
@@ -1328,6 +1327,16 @@
     color: var(--hot);
     text-transform: uppercase;
     margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .flavor-price {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #c8b89a;
+    letter-spacing: 1px;
   }
   .flavor-box {
     background: rgba(255,255,255,0.03);
@@ -1411,16 +1420,16 @@
   .gallery-inner {
     display: flex;
     gap: 12px;
-    align-items: flex-start;
+    align-items: stretch;
   }
   .gallery-main {
     flex: 1;
-    aspect-ratio: 3 / 5;
+    aspect-ratio: 1 / 2;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid rgba(180,40,40,0.3);
     box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-    background: #ffffff;
+    background: #1a1a1a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1443,11 +1452,11 @@
   .gallery-thumb {
     width: 100%;
     flex: 1;
-    border-radius: 6px;
+        border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
-    border: 2px solid rgba(255,255,255,0.08);
-    background: #ffffff;
+    border: none;
+    background: #1a1a1a;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
   .gallery-thumb img {
@@ -1458,7 +1467,6 @@
     pointer-events: none;
   }
   .gallery-thumb.active {
-    border-color: #e74c3c;
     box-shadow: 0 0 14px rgba(231,76,60,0.5);
   }
   .gallery-thumb:hover:not(.active) {
@@ -1481,6 +1489,40 @@
     z-index: 0;
   }
 
+
+  /* ── TOP NAV BUTTONS ── */
+  .top-btn-bar {
+    position: fixed;
+    top: 18px;
+    left: 68px;
+    right: 12px;
+    z-index: 298;
+    display: flex;
+    gap: 8px;
+  }
+  .top-btn-bar a, .top-btn-bar button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #c0392b, #8b1a1a);
+    color: #fff;
+    border: 1px solid rgba(231,76,60,0.5);
+    box-shadow: 0 0 12px rgba(200,50,20,0.3);
+  }
 </style>
 </head>
 <body>
@@ -1519,6 +1561,12 @@
   </div>
 </div>
 
+<div class="top-btn-bar">
+  <a href="https://www.cardiospice.com/about.html">🌿<br><span>About</span></a>
+  <button onclick="toggleMenu()">☰<br><span>Products</span></button>
+  <a href="https://www.cardiospice.com/purchase.html"><span>Buy</span><span style="font-size:11px;letter-spacing:0;font-family:'Lato',sans-serif;font-weight:700;">$14.99</span></a>
+</div>
+
 <div class="gallery-wrap">
   <div class="gallery-inner">
 
@@ -1549,12 +1597,6 @@
     Every ingredient was thoughtfully selected to support natural energy, endurance, and overall vitality — helping promote sustained performance and balance, all while delivering clean, vibrant flavor.</p>
     <p>Energy Blend – Boost is an invigorating, everyday seasoning designed to bring warmth, brightness, and lively complexity to your meals. Crafted with a purposeful blend of spices and botanicals, it delivers a savory, lightly earthy profile with a subtle sweetness and refreshing finish that enhances a wide range of food.</p>
   </div>
-</div>
-
-<div class="cta-wrap">
-  <a href="https://www.cardiospice.com/about.html" class="cta-btn cta-btn-secondary">🌿<br><span>About</span></a>
-  <button class="cta-btn cta-btn-primary" onclick="toggleMenu()">☰<br><span>Products</span></button>
-  <a href="https://www.cardiospice.com/purchase.html" class="cta-btn cta-btn-secondary">🛒<br><span>Buy</span></a>
 </div>
 
 <script>
