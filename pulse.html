@@ -1488,13 +1488,12 @@
 
   /* ── TOP NAV BUTTONS ── */
   .top-btn-bar {
-    position: fixed !important;
-    top: 18px !important;
-    left: 68px !important;
-    right: 12px !important;
-    z-index: 9999 !important;
+    position: relative;
     display: flex;
     gap: 8px;
+    padding: 18px 12px 0 68px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .top-btn-bar a, .top-btn-bar button {
     font-family: 'Orbitron', sans-serif;
@@ -1602,15 +1601,6 @@
   function toggleMenu(){document.getElementById('menuBtn').classList.toggle('open');document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
   function closeMenu(){document.getElementById('menuBtn').classList.remove('open');document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
   function toggle(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open');}
-
-  // Keep top-btn-bar pinned
-  window.addEventListener('scroll', function() {
-    var bar = document.querySelector('.top-btn-bar');
-    if (bar) {
-      bar.style.position = 'fixed';
-      bar.style.top = '18px';
-    }
-  });
   window.addEventListener('load', function(){ var t = document.querySelector('.gallery-thumb'); if(t) setMain(t, 0); });
 
   const srcs = ["https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg", "https://andleech2.github.io/cardio-spice/images/front-pulse-label.png", "https://andleech2.github.io/cardio-spice/images/back-pulse-label.png"];

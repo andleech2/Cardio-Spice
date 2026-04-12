@@ -35,7 +35,6 @@
     font-family: 'Lato', sans-serif;
     background: var(--dark);
     color: var(--text);
-    overflow-x: hidden;
   }
 
   /* ── HAMBURGER BUTTON ── */
@@ -356,7 +355,6 @@
       radial-gradient(ellipse at 50% 40%, #3a0a00 0%, #180400 45%, #0d0d0d 80%);
     position: relative;
     overflow: hidden;
-    animation: fadeUp 0.5s ease both;
   }
   .page::before {
     content: '';
@@ -799,7 +797,6 @@
     font-family: 'Lato', sans-serif;
     background: var(--dark);
     color: var(--text);
-    overflow-x: hidden;
   }
 
   /* ── HAMBURGER BUTTON ── */
@@ -1120,7 +1117,6 @@
       radial-gradient(ellipse at 50% 40%, #3a0a00 0%, #180400 45%, #0d0d0d 80%);
     position: relative;
     overflow: hidden;
-    animation: fadeUp 0.5s ease both;
   }
   .page::before {
     content: '';
@@ -1492,13 +1488,12 @@
 
   /* ── TOP NAV BUTTONS ── */
   .top-btn-bar {
-    position: fixed;
-    top: 18px;
-    left: 68px;
-    right: 12px;
-    z-index: 298;
+    position: relative;
     display: flex;
     gap: 8px;
+    padding: 18px 12px 0 68px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .top-btn-bar a, .top-btn-bar button {
     font-family: 'Orbitron', sans-serif;
@@ -1589,6 +1584,15 @@
   function toggleMenu(){document.getElementById('menuBtn').classList.toggle('open');document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
   function closeMenu(){document.getElementById('menuBtn').classList.remove('open');document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
   function toggle(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open');}
+
+  // Keep top-btn-bar pinned
+  window.addEventListener('scroll', function() {
+    var bar = document.querySelector('.top-btn-bar');
+    if (bar) {
+      bar.style.position = 'fixed';
+      bar.style.top = '18px';
+    }
+  });
   window.addEventListener('load', function(){ });
 </script>
 </body>
