@@ -1525,9 +1525,6 @@
 </head>
 <body>
 
-<button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Menu">
-  <span></span><span></span><span></span>
-</button>
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-header">
@@ -1552,16 +1549,16 @@
     <a href="https://www.cardiospice.com" class="nav-link">🏠 Home</a>
     <a href="https://www.cardiospice.com/purchase.html" class="nav-link">🛒 Where to Buy</a>
     <a href="https://www.cardiospice.com/about.html" class="nav-link">🌿 About</a>
-    <a href="https://www.cardiospice.com/contact.html" class="nav-link">📬 Contact</a>
+    <a href="https://www.cardiospice.com" class="nav-link">📬 Contact</a>
   </nav>
   <div class="drawer-footer">
     <div>All Organic Herbs &amp; Spices · USA</div>
   </div>
 </div>
 
-<!-- GALLERY -->
-
-</div>
+<button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
 
 <div class="top-btn-bar">
   <a href="https://www.cardiospice.com/about.html">🌿<br><span>About</span></a>
@@ -1569,53 +1566,28 @@
   <a href="https://www.cardiospice.com/purchase.html"><span>Buy</span><span style="font-size:11px;letter-spacing:0;font-family:'Lato',sans-serif;font-weight:700;">$14.99</span></a>
 </div>
 
-<div class="gallery-wrap">
-  <div class="gallery-inner">
+<section class="page active" id="page-contact" style="min-height:100vh;padding:100px 40px 60px;background:radial-gradient(ellipse at 50% 40%, #3a0a00 0%, #180400 45%, #0d0d0d 80%);">
 
-    <div class="gallery-main">
-      <img id="mainImg" src="https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg" alt="Cardio Blend Pulse" />
-    </div>
+  <h1 style="font-family:'Orbitron',sans-serif;font-size:clamp(24px,6vw,40px);font-weight:900;color:#fff;margin-bottom:40px;">Contact</h1>
 
-    <div class="gallery-thumbs">
-      <div class="gallery-thumb active" onclick="setMain(this, 0)">
-        <img src="https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg" alt="Label" />
-      </div>
-      <div class="gallery-thumb" onclick="setMain(this, 1)">
-        <img src="https://andleech2.github.io/cardio-spice/images/front-pulse-label.png" alt="Nutrition Facts" />
-      </div>
-      <div class="gallery-thumb" onclick="setMain(this, 2)">
-        <img src="https://andleech2.github.io/cardio-spice/images/back-pulse-label.png" alt="Coming Soon" />
-      </div>
-    </div>
-
+  <div style="font-family:'Lato',sans-serif;font-size:16px;color:#c8b89a;line-height:2;margin-bottom:40px;">
+    <p>Cardio Spice</p>
+    <p>PO Box 9951</p>
+    <p>Fargo, ND 58106</p>
   </div>
-</div>
 
-<div class="flavor-wrap">
-  <div class="flavor-label">About This Blend</div>
-  <div class="flavor-box">
-    <p><strong>Heart-Friendly Purpose:</strong><br>
-    Every ingredient was chosen to support cardiovascular wellness, helping maintain healthy circulation and blood pressure.</p>
-    <p>Cardio Blend - Pulse is a heart-conscious seasoning with a uniquely complex flavor profile. A thoughtful balance of organic herbs and spices brings warmth, depth, and subtle complexity to any dish. It's designed to be healthy and delicious.</p>
+  <div style="display:flex;align-items:center;gap:12px;margin-top:8px;">
+    <span style="font-family:'Lato',sans-serif;font-size:16px;color:#c8b89a;">Email:</span>
+    <img src="data:image/png;base64,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v2mMf8d52IrMj2NBT5din8lVwInAc50PF7Sc58h1wfnwsPPhc1gcsYOwIac/Yr0fy7CG13xsscJs58PAeTvOh4XY53k0NndvcSnXQqyH7MXOh2NGDTBb8hq5/pR07nc+HIn15n6wlHtRKfe9WKTyM7Herqc4Hz7hfHhwCpW/7fOCSOsmO3CcyEqXU9wDGzaogo5eCXwA+Pagb7rlFjVHYsNBM7F5K3OHuM2GrCZyirPoRBL/lfNh58ksj4hMTZrkLmsc58OCnOLewFnY8vvnYPNN/pBTPB+4GJtLczvWszEL+7a8Nza/qR688KdM3SjoIiIySdTAkjWS8+HinOLO2DDbrmXzNsAx5THIfcCbnQ9fnqAiiojIKkxzsGSN5Xz4E7ba6GBsHtEwHsFi8WyrxpWIiPSiHixZo5WJx2fnFL8FzAX2wRpds7Hhw+nYpPirgO8DZzgfhlm9JCIiazA1sERY3tC6pDxERERGoiFCEREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREZ5P8BxnIUAmFgQPEAAAAASUVORK5CYII=" alt="Contact Email" style="max-width:260px;height:auto;display:block;"/>
   </div>
-</div>
+
+</section>
 
 <script>
   function toggleMenu(){document.getElementById('menuBtn').classList.toggle('open');document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
   function closeMenu(){document.getElementById('menuBtn').classList.remove('open');document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
   function toggle(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open');}
-  window.addEventListener('load', function(){ var t = document.querySelector('.gallery-thumb'); if(t) setMain(t, 0); });
-
-  const srcs = ["https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg", "https://andleech2.github.io/cardio-spice/images/front-pulse-label.png", "https://andleech2.github.io/cardio-spice/images/back-pulse-label.png"];
-  function setMain(thumb, idx) {
-    document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
-    const img = document.getElementById('mainImg');
-    img.style.opacity = '0';
-    setTimeout(() => {
-      img.src = srcs[idx] || 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
-      img.style.opacity = '1';
-    }, 180);
-  }</script>
+  window.addEventListener('load', function(){ });
+</script>
 </body>
 </html>
