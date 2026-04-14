@@ -1586,10 +1586,10 @@
         <img src="https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg" alt="Cardio Blend Pulse Jar" />
       </div>
       <div class="gallery-thumb" onclick="setMain(this, 1)">
-        <img src="https://andleech2.github.io/cardio-spice/images/front-pulse-label.png" alt="Cardio Blend Pulse Front Label" />
+        <img src="https://andleech2.github.io/cardio-spice/images/pulse-front-label.png" alt="Cardio Blend Pulse Front Label" />
       </div>
       <div class="gallery-thumb" onclick="setMain(this, 2)">
-        <img src="https://andleech2.github.io/cardio-spice/images/back-pulse-label.png" alt="Cardio Blend Pulse Back Label" />
+        <img src="https://andleech2.github.io/cardio-spice/images/pulse-back-label.png" alt="Cardio Blend Pulse Back Label" />
       </div>
     </div>
 
@@ -1611,7 +1611,7 @@
   function toggle(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open');}
   window.addEventListener('load', function(){ var t = document.querySelector('.gallery-thumb'); if(t) setMain(t, 0); });
 
-  const srcs = ["https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg", "https://andleech2.github.io/cardio-spice/images/front-pulse-label.png", "https://andleech2.github.io/cardio-spice/images/back-pulse-label.png"];
+  const srcs = ["https://andleech2.github.io/cardio-spice/images/pulse-jar.jpg", "https://andleech2.github.io/cardio-spice/images/pulse-front-label.png", "https://andleech2.github.io/cardio-spice/images/pulse-back-label.png"];
   function setMain(thumb, idx) {
     document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
     thumb.classList.add('active');
