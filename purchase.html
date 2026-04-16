@@ -418,6 +418,9 @@
     opacity: 0.6;
   }
   .store-card.etsy::before  { background: linear-gradient(90deg, #f1641e, #f5a623); }
+  .store-card.shopify::before { background: linear-gradient(90deg, #96bf48, #5e8e3e); }
+  .store-card.shopify .store-icon { background: rgba(150,191,72,0.15); border: 1px solid rgba(150,191,72,0.3); }
+  .store-card.shopify .store-name { color: #96bf48; }
   .store-card.amazon::before { background: linear-gradient(90deg, #ff9900, #ffbd47); }
   .store-card:hover {
     transform: translateY(-4px);
@@ -806,7 +809,7 @@
 <div class="top-btn-bar">
   <a href="https://www.cardiospice.com/about.html">🌿<br><span>About</span></a>
   <button onclick="toggleMenu()">☰<br><span>Products</span></button>
-  <a href="https://www.cardiospice.com/purchase.html"><span>Buy</span><span style="font-size:11px;letter-spacing:0;font-family:'Lato',sans-serif;font-weight:700;">$14.99</span></a>
+  <a href="https://cardio-spice.myshopify.com/"><span>Buy</span><span style="font-size:11px;letter-spacing:0;font-family:'Lato',sans-serif;font-weight:700;">$14.99</span></a>
 </div>
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="drawer" id="drawer">
@@ -844,6 +847,15 @@
   <h1 class="purchase-heading">Where to <span>Buy</span></h1>
 
   <div class="store-cards">
+
+    <a href="https://cardio-spice.myshopify.com/" target="_blank" class="store-card shopify">
+      <div class="store-icon">🌶️</div>
+      <div class="store-info">
+        <div class="store-name">Buy Direct</div>
+        <div class="store-desc">Shop directly from Cardio Spice LLC</div>
+      </div>
+      <div class="store-arrow">→</div>
+    </a>
 
     <a href="https://www.etsy.com/shop/CardioSpice" target="_blank" class="store-card">
       <div class="store-icon">🛍️</div>
