@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Cardio Spice — Heart-Healthy Organic Seasonings</title>
-    <meta name="description" content="The story behind Cardio Spice — organic spice blends born from a heart attack at 40 and 5 years of research into natural heart health. All organic, salt free seasoning.">
-    <meta name="keywords" content="Cardio Spice, heart attack survivor, natural heart health, organic spices, cardiovascular wellness, salt free seasoning, ">
-    <meta property="og:title" content="About Cardio Spice — Heart-Healthy Organic Seasonings">
-    <meta property="og:description" content="Discover the story behind Cardio Spice, organic spice blends created to support heart health, energy, and focus. Developed from 5 years of research and personal experience.">
-    <meta property="og:image" content="https://www.cardiospice.com/images/about.jpg">
-    <meta property="og:url" content="https://www.cardiospice.com/about.html">
+    <title>Cardio Spice in Action — Try It On Everything</title>
+    <meta name="description" content="See Cardio Spice in action — delicious on eggs, beef, chicken, salmon and more. Real testimonials and food photography.">
+    <meta name="keywords" content="Cardio Spice in action, recipes, food pairings, testimonials, organic seasoning uses, salt free spice on food">
+    <meta property="og:title" content="Cardio Spice in Action — Try It On Everything">
+    <meta property="og:description" content="See Cardio Spice in action on real food. Customer stories and photography of organic salt-free spice blends in everyday meals.">
+    <meta property="og:image" content="https://www.cardiospice.com/images/action.jpg">
+    <meta property="og:url" content="https://www.cardiospice.com/action.html">
     <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
     <style>
@@ -673,17 +673,19 @@
   }
   header {
     position: relative; z-index: 1;
-    padding: 110px 24px 0;
+    padding: 55px 16px 0;
     max-width: 680px;
     margin: 0 auto;
     text-align: left;
   }
   header h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(24px, 6vw, 40px);
+    font-size: clamp(16px, 4.5vw, 44px);
     font-weight: 900;
     color: var(--text);
     line-height: 1.2;
+    white-space: nowrap;
+    margin-bottom: 32px;
   }
   header h1 span { color: var(--hot); }
   main {
@@ -780,7 +782,7 @@
     box-shadow: 0 0 12px rgba(200,50,20,0.3);
   }
 
-/* ── COMING SOON BOX ── */
+  /* ── COMING SOON BOX ── */
   .coming-soon-box {
     margin: 18px 0 8px;
     padding: 14px 0 10px;
@@ -806,7 +808,162 @@
     pointer-events: none;
     cursor: default;
   }
-  </style>
+
+  /* ── ACTION PAGE ── */
+  header { max-width: 900px; }
+  .subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+  .food-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .chip {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--chrome);
+    background: linear-gradient(145deg, #1e0a0a, #2d0e0e);
+    border: 1px solid rgba(220,60,30,0.45);
+    padding: 9px 16px;
+    border-radius: 999px;
+    box-shadow:
+      0 0 0 1px rgba(180,40,20,0.15),
+      0 2px 8px rgba(0,0,0,0.4),
+      0 0 12px rgba(200,50,20,0.18),
+      inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .chip:hover {
+    transform: translateY(-2px);
+    border-color: var(--hot);
+    box-shadow:
+      0 0 0 1px rgba(231,76,60,0.4),
+      0 4px 14px rgba(0,0,0,0.55),
+      0 0 18px rgba(231,76,60,0.35),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .chip-etc {
+    color: var(--muted);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 1px;
+  }
+  main { max-width: 1100px; }
+  .action-section { margin-top: 60px; }
+  .action-section:first-child { margin-top: 0; }
+  .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--text);
+    margin-bottom: 28px;
+    text-align: left;
+  }
+  .section-title span { color: var(--hot); }
+
+  /* Testimonials */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .testimonial-card {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a, #111);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 24px 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+  .testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--crimson), var(--orange));
+    opacity: 0.7;
+  }
+  .quote-mark {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 56px;
+    line-height: 0.6;
+    color: var(--hot);
+    opacity: 0.5;
+    margin-bottom: 8px;
+  }
+  .testimonial-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+  .stars {
+    color: #f5a623;
+    letter-spacing: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .author {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    color: var(--chrome);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* Image grid */
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .image-tile {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    border: 1px dashed rgba(180,40,40,0.35);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .image-tile:hover {
+    border-color: var(--hot);
+    background: linear-gradient(135deg, #221010, #110505);
+  }
+  .image-placeholder {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+  }
+
+  @media (max-width: 700px) {
+    .section-title { text-align: center; }
+    header { text-align: center; }
+    .food-chips { justify-content: center; }
+    .subtitle { text-align: center; }
+  }
+
+    </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EF79LD6HE"></script>
 <script>
@@ -867,20 +1024,41 @@
   </div>
 </div>
 <header>
-    <h1>About <span style="color:#e74c3c;">Cardio Spice</span></h1>
+    <h1><span style="color:#e74c3c;">Cardio Spice</span> is Delicious on Everything</h1>
+    <div class="food-chips">
+      <span class="chip">Eggs</span>
+      <span class="chip">Beef</span>
+      <span class="chip">Chicken</span>
+      <span class="chip">Salmon</span>
+      <span class="chip">Pork</span>
+      <span class="chip">Vegetables</span>
+      <span class="chip">Popcorn</span>
+      <span class="chip">Soups</span>
+      <span class="chip">Pasta</span>
+      <span class="chip">Rice</span>
+      <span class="chip">Potatoes</span>
+      <span class="chip chip-etc">…and so much more</span>
+    </div>
 </header>
 
 <main>
-    <section>
-        <p>In 2021, at the age of 40, I experienced a heart attack. A blood clot caused a 100% blockage in my right artery. It came as a complete surprise — I was active, felt healthy, and weighed around 170 pounds. That moment pushed me to explore natural ways to support my cardiovascular health.</p>
+    <section class="action-section">
+      <h2 class="section-title">See It In <span>Action</span></h2>
+      <div class="image-grid">
+        <div class="image-tile"><div class="image-placeholder">Image coming soon</div></div>
+      </div>
+    </section>
 
-        <p>Through extensive research, I discovered that many everyday herbs and spices have been studied in peer-reviewed research indexed on PubMed (NIH) for their antioxidant, anti-inflammatory, and vascular-supportive properties. This opened the door to a new perspective: simple ingredients used daily could play a meaningful role in supporting overall wellness.</p>
-
-        <p>Over the next five years, I experimented, refined, and developed blends that would eventually become Cardio Spice — carefully balancing flavor with function.</p>
-
-        <p>In addition to this research, I have worked in multiple food service environments, gaining hands-on experience with food preparation, cleanliness, and consistency — principles that carry into every batch.</p>
-
-        <p>Today, Cardio Spice is a collection of heart-conscious seasoning blends crafted for flavor, energy, focus, and strength. I'm passionate about creating healthy seasoning blends. That's why each blend is made with carefully selected premium ingredients and packaged in glass jars to preserve freshness and quality.</p>
+    <section class="action-section">
+      <h2 class="section-title">What People Are <span>Saying</span></h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="quote-mark">&ldquo;</div>
+          <p class="testimonial-text">I tried Cardio Spice today for the first time on a hamburger and it tasted very very good.</p>
+          <div class="stars">★★★★★</div>
+          <div class="author">— Audrey</div>
+        </div>
+      </div>
     </section>
 </main>
 

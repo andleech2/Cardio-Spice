@@ -723,7 +723,34 @@
     pointer-events: none;
     z-index: 0;
   }
-</style>
+
+/* ── COMING SOON BOX ── */
+  .coming-soon-box {
+    margin: 18px 0 8px;
+    padding: 14px 0 10px;
+    border: 1px dashed rgba(220,60,30,0.4);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(30,10,10,0.45), rgba(20,5,5,0.25));
+    position: relative;
+  }
+  .coming-soon-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--hot);
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(180,40,40,0.2);
+    opacity: 0.95;
+  }
+  .coming-soon-box a {
+    pointer-events: none;
+    cursor: default;
+  }
+  </style>
 
 <style>
 
@@ -1534,7 +1561,7 @@
   <span></span><span></span><span></span>
 </button>
 <div class="top-btn-bar">
-  <a href="https://www.cardiospice.com/about.html">🌿<br><span>About</span></a>
+  <a href="https://www.cardiospice.com/action.html">🔥<br><span>In Action</span></a>
   <button onclick="toggleMenu()">☰<br><span>Products</span></button>
   <a href="https://cardio-spice.myshopify.com/"><span>Buy</span><span style="font-size:11px;letter-spacing:0;font-family:'Lato',sans-serif;font-weight:700;">$14.99</span></a>
 </div>
@@ -1549,17 +1576,22 @@
     </div>
     <div class="nav-sub open">
       <a href="https://www.cardiospice.com/pulse.html" class="sub-label heart" style="display:block;text-decoration:none;color:#ffffff;">Cardio Blend</a>
-      <a href="https://www.cardiospice.com/pulse.html" class="nav-flavor nav-flavor-link" style="color:#ffffff;">Pulse</a>
-      <a href="https://www.cardiospice.com/burn.html" class="nav-flavor nav-flavor-link" style="color:#e74c3c;">Burn</a>
-      <a href="https://www.cardiospice.com/sharp.html" class="sub-label brain" style="display:block;text-decoration:none;">Focus Blend</a>
-      <a href="https://www.cardiospice.com/sharp.html" class="nav-flavor nav-flavor-link" style="color:#9b59b6;">Sharp</a>
-      <a href="https://www.cardiospice.com/boost.html" class="sub-label energy" style="display:block;text-decoration:none;">Energy Blend</a>
-      <a href="https://www.cardiospice.com/boost.html" class="nav-flavor nav-flavor-link" style="color:#e67e22;">Boost</a>
-      <a href="https://www.cardiospice.com/power.html" class="sub-label heart" style="display:block;text-decoration:none;color:#29abe2;">Strength Blend</a>
-      <a href="https://www.cardiospice.com/power.html" class="nav-flavor nav-flavor-link" style="color:#29abe2;">Power</a>
+      <a href="https://www.cardiospice.com/pulse.html" class="nav-flavor nav-flavor-link" style="color:#ffffff;">- Pulse</a>
+      <a href="https://www.cardiospice.com/burn.html" class="nav-flavor nav-flavor-link" style="color:#e74c3c;">- Burn</a>
+
+      <div class="coming-soon-box">
+        <div class="coming-soon-header">Coming Soon</div>
+        <a class="sub-label brain" style="display:block;text-decoration:none;">Focus Blend</a>
+        <a class="nav-flavor nav-flavor-link" style="color:#9b59b6;">- Sharp</a>
+        <a class="sub-label energy" style="display:block;text-decoration:none;">Energy Blend</a>
+        <a class="nav-flavor nav-flavor-link" style="color:#e67e22;">- Boost</a>
+        <a class="sub-label heart" style="display:block;text-decoration:none;color:#29abe2;">Strength Blend</a>
+        <a class="nav-flavor nav-flavor-link" style="color:#29abe2;">- Power</a>
+      </div>
     </div>
     <div class="nav-divider"></div>
     <a href="https://www.cardiospice.com" class="nav-link">🏠 Home</a>
+    <a href="https://www.cardiospice.com/action.html" class="nav-link">🔥 In Action</a>
     <a href="https://www.cardiospice.com/purchase.html" class="nav-link">🛒 Where to Buy</a>
     <a href="https://www.cardiospice.com/about.html" class="nav-link">🌿 About</a>
     <a href="https://www.cardiospice.com/contact.html" class="nav-link">📬 Contact</a>
