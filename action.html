@@ -842,7 +842,19 @@
       0 2px 8px rgba(0,0,0,0.4),
       0 0 12px rgba(200,50,20,0.18),
       inset 0 1px 0 rgba(255,255,255,0.05);
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s;
+  }
+  button.chip {
+    font: inherit;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+  }
+  button.chip:focus-visible {
+    outline: 2px solid var(--hot);
+    outline-offset: 2px;
   }
   .chip:hover {
     transform: translateY(-2px);
@@ -852,6 +864,16 @@
       0 4px 14px rgba(0,0,0,0.55),
       0 0 18px rgba(231,76,60,0.35),
       inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .chip.chip-active {
+    color: #fff;
+    background: linear-gradient(145deg, #3a1212, #5a1818);
+    border-color: var(--hot);
+    box-shadow:
+      0 0 0 1px rgba(231,76,60,0.6),
+      0 4px 14px rgba(0,0,0,0.55),
+      0 0 22px rgba(231,76,60,0.55),
+      inset 0 1px 0 rgba(255,255,255,0.1);
   }
   .chip-etc {
     color: var(--muted);
@@ -1039,17 +1061,17 @@
 <header>
     <h1><span style="color:#e74c3c;">Cardio Spice</span> is Delicious on Everything</h1>
     <div class="food-chips">
-      <span class="chip">Eggs</span>
-      <span class="chip">Beef</span>
-      <span class="chip">Chicken</span>
-      <span class="chip">Salmon</span>
-      <span class="chip">Pork</span>
-      <span class="chip">Vegetables</span>
-      <span class="chip">Popcorn</span>
-      <span class="chip">Soups</span>
-      <span class="chip">Pasta</span>
-      <span class="chip">Rice</span>
-      <span class="chip">Potatoes</span>
+      <button type="button" class="chip" data-food="eggs">Eggs</button>
+      <button type="button" class="chip" data-food="beef">Beef</button>
+      <button type="button" class="chip" data-food="chicken">Chicken</button>
+      <button type="button" class="chip" data-food="salmon">Salmon</button>
+      <button type="button" class="chip" data-food="pork">Pork</button>
+      <button type="button" class="chip" data-food="vegetables">Vegetables</button>
+      <button type="button" class="chip" data-food="popcorn">Popcorn</button>
+      <button type="button" class="chip" data-food="soups">Soups</button>
+      <button type="button" class="chip" data-food="pasta">Pasta</button>
+      <button type="button" class="chip" data-food="rice">Rice</button>
+      <button type="button" class="chip" data-food="potatoes">Potatoes</button>
       <span class="chip chip-etc">…and so much more</span>
     </div>
 </header>
@@ -1083,6 +1105,43 @@
   function toggleMenu(){document.getElementById('menuBtn').classList.toggle('open');document.getElementById('drawer').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
   function closeMenu(){document.getElementById('menuBtn').classList.remove('open');document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
   function toggle(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open');}
+
+  // Food chips → swap the In Action image
+  (function() {
+    const BASE = 'https://andleech2.github.io/cardio-spice/images/';
+    const DEFAULT_FOOD = 'eggs';
+    const chips = document.querySelectorAll('button.chip[data-food]');
+    const tile  = document.querySelector('.image-tile');
+    const link  = tile ? tile.querySelector('a') : null;
+    const img   = tile ? tile.querySelector('img') : null;
+    if (!img || !link) return;
+
+    function setActive(food) {
+      chips.forEach(c => c.classList.toggle('chip-active', c.dataset.food === food));
+    }
+    function selectFood(food) {
+      const url = BASE + food + '.png';
+      link.href = url;
+      img.alt = 'Cardio Spice on ' + food;
+      img.src = url;
+      setActive(food);
+    }
+
+    // If the requested image doesn't exist yet, fall back to eggs silently
+    img.addEventListener('error', function onErr() {
+      if (!img.src.endsWith(DEFAULT_FOOD + '.png')) {
+        img.src = BASE + DEFAULT_FOOD + '.png';
+        link.href = BASE + DEFAULT_FOOD + '.png';
+      }
+    });
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => selectFood(chip.dataset.food));
+    });
+
+    // Default state: Eggs
+    selectFood(DEFAULT_FOOD);
+  })();
 </script>
 </body>
 </html>
