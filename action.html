@@ -1089,6 +1089,12 @@
       <div class="testimonial-grid">
         <div class="testimonial-card">
           <div class="quote-mark">&ldquo;</div>
+          <p class="testimonial-text">I like all of the added health benefits of every ingredient that is easy to add to any dish. Plus it tastes great! It's a win-win!</p>
+          <div class="stars">★★★★★</div>
+          <div class="author">— George</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">&ldquo;</div>
           <p class="testimonial-text">I tried Cardio Spice today for the first time on a hamburger and it tasted very very good.</p>
           <div class="stars">★★★★★</div>
           <div class="author">— Audrey</div>
@@ -1110,38 +1116,75 @@
   (function() {
     const BASE = 'https://andleech2.github.io/cardio-spice/images/';
     const DEFAULT_FOOD = 'eggs';
+    const ROTATE_MS = 5500;
     const chips = document.querySelectorAll('button.chip[data-food]');
+    const foods = Array.from(chips).map(c => c.dataset.food);
     const tile  = document.querySelector('.image-tile');
     const link  = tile ? tile.querySelector('a') : null;
     const img   = tile ? tile.querySelector('img') : null;
     if (!img || !link) return;
+
+    let rotating = true;
+    let rotateIdx = 0;
+    let rotateTimer = null;
 
     function setActive(food) {
       chips.forEach(c => c.classList.toggle('chip-active', c.dataset.food === food));
     }
     function selectFood(food) {
       const url = BASE + food + '.png';
-      link.href = url;
-      img.alt = 'Cardio Spice on ' + food;
-      img.src = url;
+      delete img.dataset.fellBack;
+      // fade out, swap, fade in
+      img.style.transition = 'opacity 0.35s ease';
+      img.style.opacity = '0';
+      setTimeout(() => {
+        link.href = url;
+        img.alt = 'Cardio Spice on ' + food;
+        img.src = url;
+        img.style.opacity = '1';
+      }, 350);
       setActive(food);
     }
 
     // If the requested image doesn't exist yet, fall back to eggs silently
     img.addEventListener('error', function onErr() {
-      if (!img.src.endsWith(DEFAULT_FOOD + '.png')) {
-        img.src = BASE + DEFAULT_FOOD + '.png';
-        link.href = BASE + DEFAULT_FOOD + '.png';
+      const fallback = BASE + DEFAULT_FOOD + '.png';
+      // Avoid infinite loop if even the fallback can't load
+      if (img.src !== fallback && !img.dataset.fellBack) {
+        img.dataset.fellBack = '1';
+        img.src = fallback;
+        link.href = fallback;
       }
     });
 
+    function startRotation() {
+      stopRotation();
+      rotating = true;                            // <-- was the bug: flag was left false
+      rotateTimer = setInterval(() => {
+        if (!rotating) return;
+        rotateIdx = (rotateIdx + 1) % foods.length;
+        selectFood(foods[rotateIdx]);
+      }, ROTATE_MS);
+    }
+    function stopRotation() {
+      if (rotateTimer) { clearInterval(rotateTimer); rotateTimer = null; }
+      rotating = false;
+    }
+
     chips.forEach(chip => {
-      chip.addEventListener('click', () => selectFood(chip.dataset.food));
+      chip.addEventListener('click', () => {
+        stopRotation();
+        selectFood(chip.dataset.food);
+      });
     });
 
-    // Default state: Eggs
-    selectFood(DEFAULT_FOOD);
+    // Default state: Eggs, then start auto-rotation
+    rotateIdx = foods.indexOf(DEFAULT_FOOD);
+    if (rotateIdx < 0) rotateIdx = 0;
+    selectFood(foods[rotateIdx]);
+    startRotation();
   })();
+
 </script>
 </body>
 </html>
