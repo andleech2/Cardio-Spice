@@ -1182,6 +1182,13 @@
     rotateIdx = foods.indexOf(DEFAULT_FOOD);
     if (rotateIdx < 0) rotateIdx = 0;
     selectFood(foods[rotateIdx]);
+
+    // Preload all gallery images so the first cycle doesn't flash while downloading
+    foods.forEach(food => {
+      const pre = new Image();
+      pre.src = BASE + food + '.png';
+    });
+
     startRotation();
   })();
 
